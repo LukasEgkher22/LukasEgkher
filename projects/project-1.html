@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Habit Tracker API — Jordan Fischer</title>
+<title>MAMBA for EHR Classification — Lukas Egkher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="site-logo" href="../index.html">Jordan Fischer</a>
+    <a class="site-logo" href="../index.html">Lukas Egkher</a>
     <nav class="site-nav" aria-label="Main">
       <a href="../index.html">Home</a>
       <a href="../projects.html" aria-current="page">Projects</a>
@@ -27,15 +27,15 @@
   <section class="project-hero">
     <div class="wrap">
       <a class="back-link" href="../projects.html">← Back to all projects</a>
-      <h1>Habit Tracker API</h1>
+      <h1>MAMBA for EHR Classification</h1>
       <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
-        A REST API for logging daily habits and computing streaks,
-        built to learn FastAPI and proper database migrations.
+        Implementation and evaluation of a MAMBA-based structured state
+        space model for mortality prediction from electronic health records.
       </p>
       <div class="project-meta">
-        <span><strong>Stack</strong>Python, FastAPI, PostgreSQL, Docker</span>
-        <span><strong>Role</strong>Solo project</span>
-        <span><strong>Status</strong>Actively maintained</span>
+        <span><strong>Stack</strong>Python, PyTorch, MAMBA</span>
+        <span><strong>Role</strong>University project</span>
+        <span><strong>Course</strong>02456 Deep Learning, DTU</span>
       </div>
     </div>
   </section>
@@ -44,30 +44,55 @@
     <div class="project-body">
       <h2>What it does</h2>
       <p>
-        Users can create habits, log completions, and query current
-        and longest streaks. The API handles timezone-aware date
-        logic so a streak doesn't break just because someone logs
-        in after midnight in their own timezone.
+        This project implements a version of the MAMBA structured state
+        space model for classifying electronic health records. The model
+        is trained to predict in-hospital mortality using the PhysioNet
+        2012 Challenge dataset, which contains multivariate clinical
+        time series from intensive care unit patients.
       </p>
 
       <h2>How it's built</h2>
       <p>
-        The backend is FastAPI with Pydantic models for request and
-        response validation. Data lives in PostgreSQL, accessed
-        through SQLAlchemy, with Alembic handling schema migrations.
-        The whole stack runs in Docker Compose for local development.
+        The model was implemented in PyTorch and evaluated using the
+        Area Under the Precision-Recall Curve (AUPRC) and Area Under
+        the Receiver Operating Characteristic Curve (AUROC). The project
+        also includes several baseline architectures, including Transformer,
+        SeFT, GRU-D and IP-Nets, allowing the performance of the MAMBA-based
+        approach to be compared with established models for EHR classification.
       </p>
 
       <h2>What I learned</h2>
       <ul>
-        <li>Designing a clean, versioned REST API surface</li>
-        <li>Handling timezone edge cases correctly instead of guessing</li>
-        <li>Writing integration tests against a real test database</li>
+        <li>Implementing and working with structured state space models</li>
+        <li>Adapting existing model implementations to different input formats by changing how the model processes and manipulates the input rather than modifying the underlying data</li>
+        <li>Applying deep learning models to multivariate medical time series</li>
+        <li>Evaluating sequence models using AUROC and AUPRC</li>
+        <li>Understanding the differences between SSMs and attention-based models</li>
       </ul>
 
+      <h2>Project Poster</h2>
+      <p>
+        Our project was presented as a poster at the end of the course.
+        You can view the full poster below or open it as a PDF.
+      </p>
+
+      <iframe
+        src="../MAMBA_poster.jpg"
+        width="100%"
+        height="700px"
+        style="border: 1px solid var(--border); border-radius: 4px;"
+        title="MAMBA for EHR Classification project poster">
+      </iframe>
+
+      <p>
+        <a class="btn" href="../MAMBA_poster.jpg" target="_blank">
+          Open poster as PDF →
+        </a>
+      </p>
+
       <div class="project-links">
-        <a class="btn primary" href="https://github.com/yourusername/habit-tracker-api" target="_blank" rel="noopener">View on GitHub</a>
-        <a class="btn" href="../projects/project-2.html">Next project →</a>
+        <a class="btn primary" href="https://github.com/LukasEgkher22/DeepLearning-P24" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn" href="../projects.html">← All projects</a>
       </div>
     </div>
   </div>
@@ -75,10 +100,10 @@
 
 <footer class="site-footer">
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
-    <span>© 2026 Jordan Fischer</span>
+    <span>© 2026 Lukas Egkher</span>
     <span>
-      <a href="mailto:jordan@example.com">jordan@example.com</a> ·
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:lukas@egkher.at">lukas@egkher.at</a> ·
+      <a href="https://github.com/LukasEgkher22" target="_blank" rel="noopener">GitHub</a>
     </span>
   </div>
 </footer>
