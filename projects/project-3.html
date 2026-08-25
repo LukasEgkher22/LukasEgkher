@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade Predictor — Jordan Fischer</title>
+<title>3D Fiber Detection & Analysis — Lukas Egkher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="site-logo" href="../index.html">Jordan Fischer</a>
+    <a class="site-logo" href="../index.html">Lukas Egkher</a>
     <nav class="site-nav" aria-label="Main">
       <a href="../index.html">Home</a>
       <a href="../projects.html" aria-current="page">Projects</a>
@@ -27,15 +27,15 @@
   <section class="project-hero">
     <div class="wrap">
       <a class="back-link" href="../projects.html">← Back to all projects</a>
-      <h1>Grade Predictor</h1>
+      <h1>3D Fiber Detection &amp; Analysis</h1>
       <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
-        A small regression model that estimates a likely final exam
-        score from a student's earlier assignment grades.
+        A computer vision pipeline for detecting and tracking individual
+        fibers in 3D image data and analyzing their orientation and curvature.
       </p>
       <div class="project-meta">
-        <span><strong>Stack</strong>Python, pandas, scikit-learn</span>
-        <span><strong>Role</strong>Solo, weekend project</span>
-        <span><strong>Status</strong>Finished, exploratory</span>
+        <span><strong>Stack</strong>Python, NumPy, OpenCV, scikit-image</span>
+        <span><strong>Role</strong>Research project</span>
+        <span><strong>Status</strong>In progress</span>
       </div>
     </div>
   </section>
@@ -44,30 +44,68 @@
     <div class="project-body">
       <h2>What it does</h2>
       <p>
-        Given a student's grades on the first few assignments of a
-        course, the model predicts a likely range for their final
-        exam score, so they can gauge early whether they're on track.
+        The project aims to detect individual fibers in 2D image slices
+        and track them across the z-direction to reconstruct the fibers
+        as 3D curves. The reconstructed fibers can then be analyzed
+        based on their geometric properties.
       </p>
 
       <h2>How it's built</h2>
       <p>
-        Built on an anonymised grade dataset from a past course.
-        Data cleaning and feature engineering happen in pandas;
-        the model itself is a simple ridge regression from
-        scikit-learn, chosen after comparing it against a couple of
-        heavier alternatives that didn't perform meaningfully better
-        on this dataset size.
+        The image data consists of sequential 2D TIFF slices. Fibers are
+        first detected within individual slices and then tracked between
+        consecutive slices to form continuous 3D fiber trajectories.
+        From these trajectories, fiber orientation is described using
+        azimuth and elevation angles, while the geometry of the curves
+        is used to estimate their curvature.
       </p>
 
-      <h2>What I learned</h2>
-      <ul>
-        <li>Why a simpler model can beat a complex one on small data</li>
-        <li>Basic feature engineering and train/test splitting discipline</li>
-        <li>Communicating a prediction as a range, not a false-precise number</li>
-      </ul>
+      <h2>Analysis</h2>
+      <p>
+        The resulting fiber properties are analyzed using distributions
+        and histograms of orientation angles and curvature. The method
+        is also evaluated on downscaled versions of the original data to
+        investigate how image resolution affects fiber detection and
+        tracking performance.
+      </p>
+
+      <h2>Reference</h2>
+      <p>
+        The fiber analysis approach is based on the following research:
+      </p>
+      <p>
+        <a href="https://journals.sagepub.com/doi/10.1177/00219983211052741"
+           target="_blank" rel="noopener">
+          Fiber analysis — Journal of Composite Materials
+        </a>
+      </p>
+
+      <h2>Project Poster</h2>
+      <p>
+        Our project was presented as a poster at the end of the course.
+        You can view the full poster below or open it as a PDF.
+      </p>
+
+      <iframe
+        src="FiberDetection_poster.jpg"
+        width="100%"
+        height="700px"
+        style="border: 1px solid var(--border); border-radius: 4px;"
+        title="Project poster for Fiber Detection & Analysis">
+      </iframe>
+
+      <p>
+        <a class="btn" href="FiberDetection_poster.pdf" target="_blank">
+          Open poster as PDF →
+        </a>
+      </p>
 
       <div class="project-links">
-        <a class="btn primary" href="https://github.com/yourusername/grade-predictor" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn primary"
+           href="https://github.com/LukasEgkher22/FiberDetection"
+           target="_blank" rel="noopener">
+          View on GitHub
+        </a>
         <a class="btn" href="../projects.html">Back to all projects</a>
       </div>
     </div>
@@ -76,10 +114,10 @@
 
 <footer class="site-footer">
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
-    <span>© 2026 Jordan Fischer</span>
+    <span>© 2026 Lukas Egkher</span>
     <span>
-      <a href="mailto:jordan@example.com">jordan@example.com</a> ·
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:lukas@egkher.at">lukas@egkher.at</a> ·
+      <a href="https://github.com/LukasEgkher22" target="_blank" rel="noopener">GitHub</a>
     </span>
   </div>
 </footer>
