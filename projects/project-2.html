@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campus Map Viewer — Jordan Fischer</title>
+<title>DTU RoboCup 2025 — Lukas Egkher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="site-logo" href="../index.html">Jordan Fischer</a>
+    <a class="site-logo" href="../index.html">Lukas Egkher</a>
     <nav class="site-nav" aria-label="Main">
       <a href="../index.html">Home</a>
       <a href="../projects.html" aria-current="page">Projects</a>
@@ -27,47 +27,83 @@
   <section class="project-hero">
     <div class="wrap">
       <a class="back-link" href="../projects.html">← Back to all projects</a>
-      <h1>Campus Map Viewer</h1>
+      <h1>DTU RoboCup 2025</h1>
       <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
-        An interactive map showing which lecture rooms are free right
-        now, built with two classmates for a software engineering course.
+        An autonomous robot developed for the DTU RoboCup 2025, combining
+        navigation, sensing, mechanical design, and custom 3D-printed
+        mechanisms to complete a challenging multi-stage obstacle course.
       </p>
       <div class="project-meta">
-        <span><strong>Stack</strong>JavaScript, Leaflet.js, Node.js</span>
-        <span><strong>Role</strong>Frontend + map logic</span>
-        <span><strong>Status</strong>Course project, archived</span>
+        <span><strong>Robot</strong>Newton</span>
+        <span><strong>Role</strong>Robotics &amp; mechanical development</span>
+        <span><strong>Result</strong>2nd place</span>
       </div>
     </div>
   </section>
 
   <div class="wrap">
     <div class="project-body">
-      <h2>What it does</h2>
+      <h2>The Challenge</h2>
       <p>
-        The map overlays the university's timetable data onto a
-        floor plan, colour-coding rooms as free or occupied for the
-        current time slot. Clicking a room shows its schedule for
-        the rest of the day.
+        DTU RoboCup is an autonomous robotics competition where teams
+        develop a robot capable of navigating a complex track and
+        completing a series of challenges within a limited amount of time.
+        The 2025 track included ramps, stairs, a seesaw, gates, moving
+        obstacles, a golf-ball challenge, luggage delivery, and ball
+        sorting.
       </p>
 
-      <h2>How it's built</h2>
+      <h2>Our Robot</h2>
       <p>
-        Leaflet.js renders the custom floor plan as a tile layer,
-        with room polygons drawn as GeoJSON overlays. A small
-        Node.js service parses the timetable export and serves it
-        as JSON, which the frontend polls every few minutes.
+        We started with the standard robot platform provided for the
+        competition. The robot was equipped with distance sensors at the
+        front, two independently controlled wheels, and a front-mounted
+        mechanism that could be moved vertically.
       </p>
 
-      <h2>My contribution</h2>
+      <h2>My Contribution</h2>
+      <p>
+        I focused heavily on extending the robot's physical capabilities.
+        I designed and 3D-printed custom mechanical components that allowed
+        the robot to interact with objects on the track, including picking
+        up and transporting balls and moving luggage.
+      </p>
+      <p>
+        Developing these mechanisms required extensive testing and
+        iteration. Many of the solutions only worked under very specific
+        conditions, so a large part of the project consisted of repeatedly
+        testing, identifying failure modes, and redesigning the mechanisms
+        until they became reliable enough for competition.
+      </p>
+
+      <h2>Engineering Challenges</h2>
       <ul>
-        <li>Built the map interaction layer and room polygon rendering</li>
-        <li>Wrote the free/occupied colour logic and the click-to-inspect panel</li>
-        <li>Set up the CI pipeline that deployed the frontend on every merge</li>
+        <li>Designing custom 3D-printed mechanisms within the constraints of the existing robot</li>
+        <li>Developing reliable mechanisms for picking up and transporting objects</li>
+        <li>Handling uneven surfaces, ramps, stairs, and the seesaw</li>
+        <li>Using distance sensors for reliable navigation and obstacle detection</li>
+        <li>Testing and iterating through a large number of real-world failure cases</li>
+        <li>Balancing reliability and the number of challenges attempted within the time limit</li>
       </ul>
 
+      <h2>Result</h2>
+      <p>
+        After extensive development and testing, our robot Newton achieved
+        <strong>2nd place</strong> in the DTU RoboCup 2025. The report can be opened and read below.
+      </p>
+      <p>
+        <a class="btn" href="files/ROBOCUP_report.pdf" target="_blank">
+          Open report as PDF →
+        </a>
+        <a class="btn"
+           href="https://www.youtube.com/watch?v=W4RHysRu3t4"
+           target="_blank" rel="noopener">
+          Watch the Video →
+        </a>
+      </p>
+
       <div class="project-links">
-        <a class="btn primary" href="https://github.com/yourusername/campus-map-viewer" target="_blank" rel="noopener">View on GitHub</a>
-        <a class="btn" href="../projects/project-3.html">Next project →</a>
+        <a class="btn" href="../projects.html">Back to all projects</a>
       </div>
     </div>
   </div>
@@ -75,9 +111,9 @@
 
 <footer class="site-footer">
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
-    <span>© 2026 Jordan Fischer</span>
+    <span>© 2026 Lukas Egkher</span>
     <span>
-      <a href="mailto:jordan@example.com">jordan@example.com</a> ·
+      <a href="mailto:your@email.com">your@email.com</a> ·
       <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
     </span>
   </div>

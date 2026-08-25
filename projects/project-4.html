@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomous Driving Scenario — Lukas Egkher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-logo" href="../index.html">Lukas Egkher</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <a class="back-link" href="../projects.html">← Back to all projects</a>
+      <h1>Autonomous Driving Scenario</h1>
+      <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
+        A computer vision system for detecting, classifying, and tracking
+        pedestrians, cyclists, and cars in 3D using stereo camera data.
+      </p>
+      <div class="project-meta">
+        <span><strong>Stack</strong>Python, OpenCV, YOLOv8, PyTorch</span>
+        <span><strong>Role</strong>Computer Vision &amp; 3D Tracking</span>
+        <span><strong>Status</strong>Course project, completed</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="project-body">
+
+      <h2>What it does</h2>
+      <p>
+        This project develops a perception pipeline for autonomous driving
+        in dynamic urban environments. The system uses a forward-facing
+        stereo camera to detect and classify pedestrians, cyclists, and
+        cars, estimate their 3D positions, and track them across consecutive
+        frames.
+      </p>
+
+      <h2>Camera Calibration &amp; Rectification</h2>
+      <p>
+        The first stage of the pipeline calibrates the stereo camera system
+        and rectifies the raw stereo images. Multiple chessboards of
+        different sizes were automatically detected using OpenCV. The
+        resulting camera parameters were used for stereo calibration and
+        image rectification, with epipolar lines used to verify the quality
+        of the transformation.
+      </p>
+
+      <h2>Depth Estimation</h2>
+      <p>
+        Depth was estimated from the rectified stereo image pairs using
+        OpenCV's StereoSGBM algorithm. Disparity maps were converted into
+        metric depth using the calibrated stereo parameters and refined
+        using filtering and inpainting techniques.
+      </p>
+      <p>
+        The StereoSGBM parameters were optimized using Optuna, with the
+        mean depth error against the provided ground truth used as the
+        optimization objective.
+      </p>
+
+      <h2>Object Detection</h2>
+      <p>
+        A YOLOv8 model was fine-tuned to detect the three relevant object
+        classes: pedestrians, cyclists, and cars. Additional public
+        datasets were used to adapt the pretrained model to the specific
+        requirements of the autonomous driving scenario.
+      </p>
+
+      <h2>3D Object Tracking</h2>
+      <p>
+        Detected objects were assigned 3D positions using the estimated
+        depth information and tracked across video frames using a modified
+        version of ByteTrack.
+      </p>
+      <p>
+        To improve tracking during occlusions, the tracker was extended
+        with visual re-identification features extracted using a pretrained
+        ResNet-50 model. Spatial and velocity constraints were also added
+        to reduce incorrect matches between objects.
+      </p>
+
+      <h2>Optimization &amp; Evaluation</h2>
+      <p>
+        Optuna was also used to optimize the tracking parameters for
+        different object classes. The final system was evaluated against
+        ground-truth annotations using precision, recall, and
+        multi-object tracking metrics.
+      </p>
+      <p>
+        The results showed that the system could reliably detect and track
+        objects in realistic urban scenes, although heavy occlusion and
+        interactions between pedestrians and cyclists remained challenging.
+      </p>
+
+      <h2>Project Results</h2>
+      <p>
+        The project resulted in a complete perception pipeline combining
+        stereo vision, depth estimation, deep-learning-based object
+        detection, and 3D multi-object tracking. The system was tested on
+        multiple driving sequences, including an unlabelled sequence for
+        qualitative evaluation under realistic conditions.
+      </p>
+
+      <h2>Project Materials</h2>
+      <p>
+        <a class="btn primary"
+           href="https://github.com/LukasEgkher22/AutonomousDrivingScenario"
+           target="_blank" rel="noopener">
+          View on GitHub →
+        </a>
+        <a class="btn"
+           href="files/AutonomousDrivingScenario.pdf"
+           target="_blank" rel="noopener">
+          Read the Report →
+        </a>
+        <a class="btn"
+           href="https://www.youtube.com/watch?v=W4RHysRu3t4"
+           target="_blank" rel="noopener">
+          Watch the Video →
+        </a>
+      </p>
+
+      <div class="project-links">
+        <a class="btn" href="../projects.html">Back to all projects</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Lukas Egkher</span>
+    <span>
+      <a href="mailto:lukas@egkher.at">lukas@egkher.at</a> ·
+      <a href="https://github.com/LukasEgkher22" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/lukas-egkher-991844260/" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
