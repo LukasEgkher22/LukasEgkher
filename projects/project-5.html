@@ -26,153 +26,140 @@
 </header>
 
 <main>
-
   <section class="project-hero">
     <div class="wrap">
       <a class="back-link" href="../projects.html">← Back to all projects</a>
-
-```
-  <h1>Prediction of ENSO Events using a STAR Model</h1>
-
-  <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
-    A time series analysis of the El Niño–Southern Oscillation using
-    linear autoregressive and nonlinear Smooth Transition Autoregressive
-    (STAR) models.
-  </p>
-
-  <div class="project-meta">
-    <span><strong>Stack</strong>R, Time Series Analysis, Statistics</span>
-    <span><strong>Role</strong>Bachelor's thesis</span>
-    <span><strong>Status</strong>Completed · 2023</span>
-  </div>
-</div>
-```
-
+      <h1>Prediction of ENSO Events using a STAR Model</h1>
+      <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
+        A time series analysis of the El Niño–Southern Oscillation using
+        linear autoregressive and nonlinear Smooth Transition Autoregressive
+        (STAR) models.
+      </p>
+      <div class="project-meta">
+        <span><strong>Stack</strong>R, Time Series Analysis, Statistics</span>
+        <span><strong>Role</strong>Bachelor's thesis</span>
+        <span><strong>Status</strong>Completed · 2023</span>
+      </div>
+    </div>
   </section>
 
   <div class="wrap">
     <div class="project-body">
+      <h2>Overview</h2>
 
-```
-  <h2>Overview</h2>
+      <p>
+        This bachelor's thesis investigates whether nonlinear Smooth Transition
+        Autoregressive (STAR) models can improve the prediction of El Niño–
+        Southern Oscillation (ENSO) events compared with conventional linear
+        autoregressive models.
+      </p>
 
-  <p>
-    This bachelor's thesis investigates whether nonlinear Smooth Transition
-    Autoregressive (STAR) models can improve the prediction of El Niño–
-    Southern Oscillation (ENSO) events compared with conventional linear
-    autoregressive models.
-  </p>
-
-  <p>
-    The analysis uses the Southern Oscillation Index (SOI), a commonly used
-    indicator of ENSO activity based on atmospheric pressure differences
-    between Tahiti and Darwin.
-  </p>
+      <p>
+        The analysis uses the Southern Oscillation Index (SOI), a commonly used
+        indicator of ENSO activity based on atmospheric pressure differences
+        between Tahiti and Darwin.
+      </p>
 
 
-  <h2>Approach</h2>
+      <h2>Approach</h2>
 
-  <p>
-    A linear autoregressive model is first estimated and used as a baseline.
-    Linearity is then tested using the methodology proposed for STAR models.
-    After rejecting linearity, different smooth transition specifications
-    are investigated, including Logistic STAR (LSTAR) and Exponential STAR
-    (ESTAR) models.
-  </p>
+      <p>
+        A linear autoregressive model is first estimated and used as a baseline.
+        Linearity is then tested using the methodology proposed for STAR models.
+        After rejecting linearity, different smooth transition specifications
+        are investigated, including Logistic STAR (LSTAR) and Exponential STAR
+        (ESTAR) models.
+      </p>
 
-  <p>
-    The nonlinear models introduce a transition function that allows the
-    dynamics of the time series to change smoothly between different
-    regimes. Model parameters are estimated using a combination of
-    nonlinear estimation and grid search.
-  </p>
-
-
-  <h2>Results</h2>
-
-  <p>
-    Both STAR models provide a better fit to the training data than the
-    linear autoregressive model. The ESTAR model reduces the residual sum
-    of squares by approximately 4.3%, while the LSTAR model achieves a
-    reduction of approximately 5.1%.
-  </p>
-
-  <p>
-    However, this improvement does not transfer to the test data. Both
-    nonlinear models perform worse than the linear model when evaluated on
-    observations from 2001 to 2023, indicating that the additional
-    flexibility of the STAR models leads to overfitting.
-  </p>
-
-  <p>
-    The results therefore suggest that, for this dataset, the more complex
-    nonlinear models do not provide a meaningful improvement for
-    forecasting ENSO events based solely on the Southern Oscillation Index.
-  </p>
+      <p>
+        The nonlinear models introduce a transition function that allows the
+        dynamics of the time series to change smoothly between different
+        regimes. Model parameters are estimated using a combination of
+        nonlinear estimation and grid search.
+      </p>
 
 
-  <h2>Key Findings</h2>
+      <h2>Results</h2>
 
-  <ul>
-    <li>Linearity of the SOI time series was rejected for a delay of three months.</li>
-    <li>An ESTAR model was selected based on the transition-function tests.</li>
-    <li>Both ESTAR and LSTAR models fit the training data better than the linear model.</li>
-    <li>The nonlinear models performed worse on the independent test data.</li>
-    <li>The results indicate overfitting and highlight the limitations of using the SOI alone for ENSO prediction.</li>
-  </ul>
+      <p>
+        Both STAR models provide a better fit to the training data than the
+        linear autoregressive model. The ESTAR model reduces the residual sum
+        of squares by approximately 4.3%, while the LSTAR model achieves a
+        reduction of approximately 5.1%.
+      </p>
 
+      <p>
+        However, this improvement does not transfer to the test data. Both
+        nonlinear models perform worse than the linear model when evaluated on
+        observations from 2001 to 2023, indicating that the additional
+        flexibility of the STAR models leads to overfitting.
+      </p>
 
-  <h2>Thesis</h2>
-
-  <p>
-    The complete bachelor's thesis contains the theoretical development
-    of STAR models, the statistical testing procedure, the analysis of the
-    Southern Oscillation Index, and the empirical comparison of the
-    different forecasting models.
-  </p>
-
-  <p>
-    <a class="btn" href="files/Bachelor_Thesis.pdf" target="_blank" rel="noopener">
-      Open bachelor's thesis as PDF →
-    </a>
-  </p>
+      <p>
+        The results therefore suggest that, for this dataset, the more complex
+        nonlinear models do not provide a meaningful improvement for
+        forecasting ENSO events based solely on the Southern Oscillation Index.
+      </p>
 
 
-  <h2>References</h2>
+      <h2>Key Findings</h2>
 
-  <p>
-    The methodology is primarily based on research by
-    Teräsvirta and other authors on Smooth Transition Autoregressive
-    models and nonlinear time series analysis.
-  </p>
-
-  <p>
-    <a href="https://doi.org/10.2307/2336599"
-       target="_blank" rel="noopener">
-      Testing Linearity Against Smooth Transition Autoregressive Models
-    </a>
-  </p>
-
-  <p>
-    <a href="https://doi.org/10.2307/2291217"
-       target="_blank" rel="noopener">
-      Specification, Estimation, and Evaluation of Smooth Transition Autoregressive Models
-    </a>
-  </p>
+      <ul>
+        <li>Linearity of the SOI time series was rejected for a delay of three months.</li>
+        <li>An ESTAR model was selected based on the transition-function tests.</li>
+        <li>Both ESTAR and LSTAR models fit the training data better than the linear model.</li>
+        <li>The nonlinear models performed worse on the independent test data.</li>
+        <li>The results indicate overfitting and highlight the limitations of using the SOI alone for ENSO prediction.</li>
+      </ul>
 
 
-  <div class="project-links">
-    <a class="btn primary"
-       href="../projects.html">
-      Back to all projects
-    </a>
+      <h2>Thesis</h2>
+
+      <p>
+        The complete bachelor's thesis contains the theoretical development
+        of STAR models, the statistical testing procedure, the analysis of the
+        Southern Oscillation Index, and the empirical comparison of the
+        different forecasting models.
+      </p>
+
+      <p>
+        <a class="btn" href="files/Bachelor_Thesis.pdf" target="_blank" rel="noopener">
+          Open bachelor's thesis as PDF →
+        </a>
+      </p>
+
+
+      <h2>References</h2>
+
+      <p>
+        The methodology is primarily based on research by
+        Teräsvirta and other authors on Smooth Transition Autoregressive
+        models and nonlinear time series analysis.
+      </p>
+
+      <p>
+        <a href="https://doi.org/10.2307/2336599"
+          target="_blank" rel="noopener">
+          Testing Linearity Against Smooth Transition Autoregressive Models
+        </a>
+      </p>
+
+      <p>
+        <a href="https://doi.org/10.2307/2291217"
+          target="_blank" rel="noopener">
+          Specification, Estimation, and Evaluation of Smooth Transition Autoregressive Models
+        </a>
+      </p>
+
+
+      <div class="project-links">
+        <a class="btn primary"
+          href="../projects.html">
+          Back to all projects
+        </a>
+      </div>
+    </div>
   </div>
-
-</div>
-```
-
-  </div>
-
 </main>
 
 <footer class="site-footer">
@@ -180,9 +167,8 @@
     <span>© 2026 Lukas Egkher</span>
     <span>
       <a href="mailto:lukas@egkher.at">lukas@egkher.at</a> ·
-      <a href="https://github.com/LukasEgkher22" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/lukas-egkher-991844260/"
-         target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/LukasEgkher22" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/lukas-egkher-991844260/" target="_blank" rel="noopener">LinkedIn</a>
     </span>
   </div>
 </footer>
