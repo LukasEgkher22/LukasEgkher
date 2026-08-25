@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Jordan Fischer</title>
+<meta name="description" content="All projects by Jordan Fischer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-logo" href="index.html">Jordan Fischer</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="section-head" style="margin-top: 56px;">
+      <h2>All projects</h2>
+    </div>
+
+    <ol class="project-index">
+      <li>
+        <a href="projects/project-1.html">
+          <span class="proj-num">01</span>
+          <span class="proj-body">
+            <span class="proj-title">Habit Tracker API</span>
+            <span class="proj-desc">A small REST API for tracking daily habits, with streak logic and a Postgres backend.</span>
+          </span>
+          <span class="proj-tags">Python · FastAPI</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects/project-2.html">
+          <span class="proj-num">02</span>
+          <span class="proj-body">
+            <span class="proj-title">Campus Map Viewer</span>
+            <span class="proj-desc">Interactive map for finding free rooms on campus, built as a university group project.</span>
+          </span>
+          <span class="proj-tags">JavaScript · Leaflet</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects/project-3.html">
+          <span class="proj-num">03</span>
+          <span class="proj-body">
+            <span class="proj-title">Grade Predictor</span>
+            <span class="proj-desc">A simple regression model estimating final exam scores from past assignment grades.</span>
+          </span>
+          <span class="proj-tags">Python · scikit-learn</span>
+        </a>
+      </li>
+    </ol>
+
+    <p style="color: var(--ink-soft); font-size: 0.95rem; margin: -20px 0 60px;">
+      Adding a new project? Duplicate <code>projects/project-1.html</code>,
+      edit the content, and add one more &lt;li&gt; above.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Jordan Fischer</span>
+    <span>
+      <a href="mailto:jordan@example.com">jordan@example.com</a> ·
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

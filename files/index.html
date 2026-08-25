@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Fischer — Portfolio</title>
+<meta name="description" content="Software developer portfolio — projects, skills and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-logo" href="index.html">Jordan Fischer</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Software developer</p>
+      <h1>I build small tools that solve real problems.</h1>
+      <p class="lede">
+        This page is a running catalog of things I've built — from
+        university coursework to weekend experiments. Have a look
+        around, or grab the CV for the short version.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="projects.html">View all projects</a>
+        <a class="btn" href="mailto:jordan@example.com">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected projects</h2>
+      <a class="see-all" href="projects.html">Full index →</a>
+    </div>
+
+    <ol class="project-index">
+      <li>
+        <a href="projects/project-1.html">
+          <span class="proj-num">01</span>
+          <span class="proj-body">
+            <span class="proj-title">Habit Tracker API</span>
+            <span class="proj-desc">A small REST API for tracking daily habits, with streak logic and a Postgres backend.</span>
+          </span>
+          <span class="proj-tags">Python · FastAPI</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects/project-2.html">
+          <span class="proj-num">02</span>
+          <span class="proj-body">
+            <span class="proj-title">Campus Map Viewer</span>
+            <span class="proj-desc">Interactive map for finding free rooms on campus, built as a university group project.</span>
+          </span>
+          <span class="proj-tags">JavaScript · Leaflet</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects/project-3.html">
+          <span class="proj-num">03</span>
+          <span class="proj-body">
+            <span class="proj-title">Grade Predictor</span>
+            <span class="proj-desc">A simple regression model estimating final exam scores from past assignment grades.</span>
+          </span>
+          <span class="proj-tags">Python · scikit-learn</span>
+        </a>
+      </li>
+    </ol>
+
+    <section class="about-grid" id="about">
+      <div>
+        <h2>About</h2>
+        <p>
+          I'm a computer science student who likes taking small,
+          concrete problems and shipping working software for them.
+          This site is a lightweight alternative to a static CV —
+          every project links through to a short write-up of what it
+          does and how it was built.
+        </p>
+      </div>
+      <div>
+        <h2>Tools I use</h2>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Jordan Fischer</span>
+    <span>
+      <a href="mailto:jordan@example.com">jordan@example.com</a> ·
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

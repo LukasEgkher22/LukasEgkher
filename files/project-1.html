@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Tracker API — Jordan Fischer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-logo" href="../index.html">Jordan Fischer</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <a class="back-link" href="../projects.html">← Back to all projects</a>
+      <h1>Habit Tracker API</h1>
+      <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
+        A REST API for logging daily habits and computing streaks,
+        built to learn FastAPI and proper database migrations.
+      </p>
+      <div class="project-meta">
+        <span><strong>Stack</strong>Python, FastAPI, PostgreSQL, Docker</span>
+        <span><strong>Role</strong>Solo project</span>
+        <span><strong>Status</strong>Actively maintained</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="project-body">
+      <h2>What it does</h2>
+      <p>
+        Users can create habits, log completions, and query current
+        and longest streaks. The API handles timezone-aware date
+        logic so a streak doesn't break just because someone logs
+        in after midnight in their own timezone.
+      </p>
+
+      <h2>How it's built</h2>
+      <p>
+        The backend is FastAPI with Pydantic models for request and
+        response validation. Data lives in PostgreSQL, accessed
+        through SQLAlchemy, with Alembic handling schema migrations.
+        The whole stack runs in Docker Compose for local development.
+      </p>
+
+      <h2>What I learned</h2>
+      <ul>
+        <li>Designing a clean, versioned REST API surface</li>
+        <li>Handling timezone edge cases correctly instead of guessing</li>
+        <li>Writing integration tests against a real test database</li>
+      </ul>
+
+      <div class="project-links">
+        <a class="btn primary" href="https://github.com/yourusername/habit-tracker-api" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn" href="../projects/project-2.html">Next project →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Jordan Fischer</span>
+    <span>
+      <a href="mailto:jordan@example.com">jordan@example.com</a> ·
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
