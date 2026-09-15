@@ -44,83 +44,80 @@
 
   <div class="wrap">
     <div class="project-body">
+      <h2>What it does</h2>
+      <p>
+        The project develops an optimisation model for assigning rolling
+        stock to the trains in a single weekday timetable. The objective
+        is to find a feasible and cost-efficient allocation of train units
+        while meeting passenger demand and respecting operational and
+        infrastructure constraints.
+      </p>
+      <p>
+        The model determines the composition of each train and ensures that
+        the required number of units of each type is available throughout
+        the timetable. The resulting composition can then be translated
+        into an operational schedule using individual rolling stock units.
+      </p>
 
-```
-  <h2>What it does</h2>
-  <p>
-    The project develops an optimisation model for assigning rolling
-    stock to the trains in a single weekday timetable. The objective
-    is to find a feasible and cost-efficient allocation of train units
-    while meeting passenger demand and respecting operational and
-    infrastructure constraints.
-  </p>
-  <p>
-    The model determines the composition of each train and ensures that
-    the required number of units of each type is available throughout
-    the timetable. The resulting composition can then be translated
-    into an operational schedule using individual rolling stock units.
-  </p>
+      <h2>How it's built</h2>
+      <p>
+        The optimisation problem is formulated as a mixed-integer linear
+        program in Julia using JuMP and solved with Gurobi. Timetable,
+        passenger, infrastructure, and rolling stock data are combined
+        and preprocessed before being passed to the optimisation model.
+      </p>
+      <p>
+        Several model variants were developed to investigate different
+        levels of operational detail. The baseline model focuses on the
+        required rolling stock capacity, while additional constraints
+        preserve unit types throughout train journeys and account for
+        train movements connected through the same operational service.
+      </p>
 
-  <h2>How it's built</h2>
-  <p>
-    The optimisation problem is formulated as a mixed-integer linear
-    program in Julia using JuMP and solved with Gurobi. Timetable,
-    passenger, infrastructure, and rolling stock data are combined
-    and preprocessed before being passed to the optimisation model.
-  </p>
-  <p>
-    Several model variants were developed to investigate different
-    levels of operational detail. The baseline model focuses on the
-    required rolling stock capacity, while additional constraints
-    preserve unit types throughout train journeys and account for
-    train movements connected through the same operational service.
-  </p>
+      <h2>Optimisation</h2>
+      <p>
+        A key challenge is balancing the mathematical model with the
+        practical requirements of railway operations. Constraints cover
+        passenger capacity, electrification, train compositions, unit
+        availability, and the conservation of rolling stock between the
+        beginning and end of the planning period.
+      </p>
+      <p>
+        The final model was evaluated using real DSB timetable data.
+        Increasing the level of operational detail significantly increases
+        the size and computational complexity of the optimisation problem,
+        making the trade-off between model accuracy and solution time an
+        important part of the project.
+      </p>
 
-  <h2>Optimisation</h2>
-  <p>
-    A key challenge is balancing the mathematical model with the
-    practical requirements of railway operations. Constraints cover
-    passenger capacity, electrification, train compositions, unit
-    availability, and the conservation of rolling stock between the
-    beginning and end of the planning period.
-  </p>
-  <p>
-    The final model was evaluated using real DSB timetable data.
-    Increasing the level of operational detail significantly increases
-    the size and computational complexity of the optimisation problem,
-    making the trade-off between model accuracy and solution time an
-    important part of the project.
-  </p>
+      <h2>Results</h2>
+      <p>
+        The different model formulations were compared in terms of
+        feasibility, rolling stock requirements, solution quality, and
+        computational performance. The results show how incorporating
+        operational constraints changes the resulting allocation and can
+        require substantially larger optimisation models.
+      </p>
 
-  <h2>Results</h2>
-  <p>
-    The different model formulations were compared in terms of
-    feasibility, rolling stock requirements, solution quality, and
-    computational performance. The results show how incorporating
-    operational constraints changes the resulting allocation and can
-    require substantially larger optimisation models.
-  </p>
+      <h2>Thesis</h2>
+      <p>
+        Master's thesis conducted at the Technical University of Denmark
+        (DTU) in collaboration with DSB.
+      </p>
 
-  <h2>Thesis</h2>
-  <p>
-    Master's thesis conducted at the Technical University of Denmark
-    (DTU) in collaboration with DSB.
-  </p>
+      <div class="project-links">
+        <a class="btn"
+          href="https://github.com/LukasEgkher22/RollingStock"
+          target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
 
-  <div class="project-links">
-    <a class="btn"
-       href="https://github.com/LukasEgkher22/RollingStock"
-       target="_blank" rel="noopener">
-      View on GitHub
-    </a>
-  </div>
+      <p>
+        <a class="btn primary" href="../projects.html">← All projects</a>
+      </p>
 
-  <p>
-    <a class="btn primary" href="../projects.html">← All projects</a>
-  </p>
-
-</div>
-```
+    </div>
 
   </div>
 </main>
