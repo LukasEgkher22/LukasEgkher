@@ -260,7 +260,7 @@ nav.site-nav a[aria-current="page"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin: 64px 0;
+  margin: 48px 0 64px;
 }
 
 .about-grid h2 {
