@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garmin MCP Server &amp; Training Dashboard — Lukas Egkher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-logo" href="../index.html">Lukas Egkher</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="project-hero">
+    <div class="wrap">
+      <a class="back-link" href="../projects.html">← Back to all projects</a>
+      <h1>Garmin MCP Server &amp; Training Dashboard</h1>
+      <p class="lede" style="max-width: 56ch; color: var(--ink-soft);">
+        A local MCP server that lets Claude read my Garmin Connect data and
+        put structured workouts on my calendar, plus a training dashboard
+        that runs in the browser.
+      </p>
+      <div class="project-meta">
+        <span><strong>Stack</strong>Python, MCP, Starlette, SQLite</span>
+        <span><strong>Role</strong>Personal project</span>
+        <span><strong>Status</strong>Active · 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="project-body">
+
+      <h2>What it does</h2>
+      <p>
+        The project has two parts that share the same Garmin login. The MCP
+        server connects Garmin Connect to the Claude desktop app, so Claude
+        can coach from real training and recovery data. The dashboard shows
+        the same data as charts and doesn't need Claude running.
+      </p>
+
+      <h2>MCP Server</h2>
+      <p>
+        The server gives Claude tools for reading sleep, HRV, training
+        readiness, activities with their laps and heart rate zones, training
+        status, VO2max and race predictions.
+      </p>
+      <p>
+        Claude can also create structured run, bike and swim workouts. With
+        a date, a workout goes on the Garmin Connect calendar and syncs to
+        the watch, ready to start. Bike targets are stored as a percentage
+        of FTP rather than fixed watts, so the watch recalculates them when
+        FTP changes.
+      </p>
+
+      <h2>Training Dashboard</h2>
+      <p>
+        The dashboard covers fitness and fatigue, training volume, recovery,
+        performance, a calendar and a searchable activity list. Date range
+        and sport filters apply across the charts. Fitness and fatigue are
+        42-day and 7-day exponential averages of Garmin's training load.
+      </p>
+
+      <figure style="margin: 24px 0;">
+        <img
+          src="files/GarminDashboard_fitness.png"
+          alt="Dashboard Fitness tab with a form score, recovery numbers such as HRV and resting heart rate, and a chart of fitness and fatigue over six weeks"
+          width="1365"
+          height="905"
+          style="
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            display: block;
+          "
+        >
+        <figcaption style="margin-top: 8px; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-soft);">
+          Fitness tab: form, recovery numbers, and fitness against fatigue.
+        </figcaption>
+      </figure>
+
+      <figure style="margin: 24px 0;">
+        <img
+          src="files/GarminDashboard_calendar.png"
+          alt="Dashboard Calendar tab with a 12-month training load heatmap above a month view of completed and planned run, bike and swim workouts"
+          width="1356"
+          height="842"
+          style="
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            display: block;
+          "
+        >
+        <figcaption style="margin-top: 8px; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-soft);">
+          Calendar tab: 12-month load heatmap, with completed and planned workouts by month.
+        </figcaption>
+      </figure>
+
+      <h2>Local by Design</h2>
+      <p>
+        Both parts run on my own PC. The Garmin password is used once to log
+        in and is never stored. The dashboard listens on the local machine
+        only, makes no requests except to Garmin, and never changes anything
+        on the Garmin account. Its data is cached in a SQLite file, so the
+        page loads instantly and only new data is fetched. Anything Claude
+        reads through the MCP server also goes to Anthropic.
+      </p>
+      <p>
+        This is an unofficial personal project, not affiliated with or
+        endorsed by Garmin.
+      </p>
+
+      <h2>Project Materials</h2>
+      <div class="project-links">
+        <a class="btn"
+           href="https://github.com/LukasEgkher22/Garmin_MCP"
+           target="_blank" rel="noopener">
+          View on GitHub →
+        </a>
+      </div>
+      <p style="font-size: 0.95rem; color: var(--ink-soft);">
+        The repository isn't public yet, so this link won't open for now.
+      </p>
+
+      <p>
+        <a class="btn primary" href="../projects.html">← All projects</a>
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Lukas Egkher</span>
+    <span>
+      <a href="mailto:lukas@egkher.at">lukas@egkher.at</a> ·
+      <a href="https://github.com/LukasEgkher22" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/lukas-egkher-991844260/" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
