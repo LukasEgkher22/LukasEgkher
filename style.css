@@ -30,6 +30,9 @@ html {
 
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -250,6 +253,8 @@ nav.site-nav a[aria-current="page"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .gallery-card--wide {
@@ -258,6 +263,8 @@ nav.site-nav a[aria-current="page"] {
 
 .gallery-card > a {
   display: block;
+  width: 100%;
+  min-width: 0;
   color: var(--ink);
   text-decoration: none;
   border: 1px solid var(--rule);
@@ -272,7 +279,9 @@ nav.site-nav a[aria-current="page"] {
 }
 
 .gallery-card figure {
-  height: 280px;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  height: auto;
   margin: 0;
   overflow: hidden;
   background: #d8d5c9;
@@ -280,20 +289,21 @@ nav.site-nav a[aria-current="page"] {
 }
 
 .gallery-card--wide figure {
-  height: 390px;
+  aspect-ratio: 16 / 8.5;
 }
 
 .gallery-card figure img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
 }
 
 .gallery-card--wide figure img {
-  object-position: center 18%;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .gallery-card > a:hover figure img {
@@ -341,6 +351,28 @@ nav.site-nav a[aria-current="page"] {
 .gallery-card > a:hover .gallery-card__arrow {
   background: var(--ink);
   color: var(--paper);
+}
+
+.project-cta {
+  margin: 20px 0 56px;
+  padding: 28px 30px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.project-cta h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.2;
+}
+
+.project-cta .btn {
+  flex: 0 0 auto;
 }
 
 .reveal {
@@ -550,7 +582,12 @@ nav.site-nav a[aria-current="page"] {
   .project-gallery { grid-template-columns: 1fr; }
   .gallery-card--wide { grid-column: auto; }
   .gallery-card--wide figure,
-  .gallery-card figure { height: 230px; }
+  .gallery-card figure { aspect-ratio: 16 / 10; }
+  .project-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 0;
+  }
   .about-grid { grid-template-columns: 1fr; }
   .project-index a {
     grid-template-columns: 32px 1fr;
